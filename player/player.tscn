@@ -16,3 +16,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_yklcg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 360
