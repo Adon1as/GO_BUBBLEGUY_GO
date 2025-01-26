@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://limlqet1g7wt"]
+
+[ext_resource type="FontFile" uid="uid://w0vgmvxip113" path="res://assets/fonts/That_Sounds_Great.otf" id="1_5ggr1"]
+
+[resource]
+font = ExtResource("1_5ggr1")
+font_size = 22
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.74902)

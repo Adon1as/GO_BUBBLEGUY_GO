@@ -17,7 +17,7 @@ func _on_new_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://stages/factory/factory.tscn")
 
 
-func _on_credites_pressed() -> void:
+func _on_credits_pressed() -> void:
 	pass # Replace with function body.
 
 
@@ -33,3 +33,7 @@ func won():
 	var label:Label = get_node("title")
 	label.text = "YOU WIN"
 	label.self_modulate = Color.DARK_GREEN
+
+
+func _on_credites_pressed() -> void:
+	pass # Replace with function body.
