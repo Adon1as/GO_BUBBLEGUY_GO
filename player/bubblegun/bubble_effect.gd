@@ -1,6 +1,5 @@
-extends Node
-
-var game_result = 0
+extends RigidBody2D
+class_name BubbleEffect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

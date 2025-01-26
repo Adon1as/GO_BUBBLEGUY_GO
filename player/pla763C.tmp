@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctu8173bndnaa"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_bs6cq"]
+[ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="1_yklcg"]
+[ext_resource type="PackedScene" uid="uid://c0x41qs4nxj21" path="res://player/bubblegun/bubble_gun.tscn" id="3_f2s2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ksuj"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 11
+collision_mask = 3
+script = ExtResource("1_bs6cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ksuj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yklcg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 350
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="BubbleGun" parent="." instance=ExtResource("3_f2s2k")]
+position = Vector2(13, 0)

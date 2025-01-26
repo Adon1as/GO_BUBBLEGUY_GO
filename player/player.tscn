@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctu8173bndnaa"]
+[gd_scene load_steps=6 format=3 uid="uid://ctu8173bndnaa"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_bs6cq"]
 [ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="1_yklcg"]
+[ext_resource type="PackedScene" uid="uid://c0x41qs4nxj21" path="res://player/bubblegun/bubble_gun.tscn" id="3_f2s2k"]
+[ext_resource type="Script" path="res://player/timers.gd" id="4_p2arb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ksuj"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 11
+collision_mask = 3
 script = ExtResource("1_bs6cq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,6 +19,31 @@ shape = SubResource("RectangleShape2D_3ksuj")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_yklcg")
 
+[node name="BubbleGun" parent="Sprite2D" instance=ExtResource("3_f2s2k")]
+position = Vector2(125, 0)
+scale = Vector2(5, 5)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_bottom = 360
+limit_bottom = 350
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="PlayerTimer" type="Node" parent="."]
+script = ExtResource("4_p2arb")
+
+[node name="dash" type="Timer" parent="PlayerTimer"]
+wait_time = 0.3
+one_shot = true
+
+[node name="delay_dmg" type="Timer" parent="PlayerTimer"]
+wait_time = 0.5
+one_shot = true
+
+[node name="knockback" type="Timer" parent="PlayerTimer"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="PlayerTimer/dash" to="." method="_on_dash_timeout"]
+[connection signal="timeout" from="PlayerTimer/delay_dmg" to="." method="_on_delay_dmg_timeout"]
+[connection signal="timeout" from="PlayerTimer/knockback" to="." method="_on_knockback_timeout"]

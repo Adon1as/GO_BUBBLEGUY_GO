@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cup5kdr8r6ryw"]
+
+[ext_resource type="Script" path="res://prefab/enemys/walk_mob/walk_mob.gd" id="1_m1v81"]
+[ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="2_7hr68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j1kq"]
+
+[node name="WalkMob" type="Node2D"]
+top_level = true
+script = ExtResource("1_m1v81")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+light_mask = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7hr68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_7j1kq")

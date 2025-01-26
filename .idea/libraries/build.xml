@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="build">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/web_build.zip!/" />
+      <root url="jar://$PROJECT_DIR$/build/web_go_bubbleguy_go.zip!/" />
+      <root url="jar://$PROJECT_DIR$/build/GO_BUBBLEGUY_GO.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

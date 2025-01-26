@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2acrrjqxysy8"]
+
+[ext_resource type="Texture2D" uid="uid://o4p375xwu6b3" path="res://assets/player/bubble_gun/bubble dawg.png" id="1_50vw8"]
+[ext_resource type="Script" path="res://player/bubblegun/bubble_bullet.gd" id="1_xl1bc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4tphg"]
+radius = 13.0
+
+[node name="BubbleBullet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 5.0
+script = ExtResource("1_xl1bc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_4tphg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_50vw8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

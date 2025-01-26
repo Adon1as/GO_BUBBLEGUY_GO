@@ -3,8 +3,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if Global.game_result == 1:
+		won() # Replace with function body.
+	elif Global.game_result == -1:
+		lose()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,3 +23,13 @@ func _on_credites_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit() # Replace with function body.
+
+func lose():
+	var label:Label = get_node("title")
+	label.text = "YOU LOST"
+	label.self_modulate = Color.RED
+	
+func won():
+	var label:Label = get_node("title")
+	label.text = "YOU WIN"
+	label.self_modulate = Color.DARK_GREEN

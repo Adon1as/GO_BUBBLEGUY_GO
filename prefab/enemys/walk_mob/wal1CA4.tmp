@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cup5kdr8r6ryw"]
+
+[ext_resource type="Script" path="res://prefab/enemys/walk_mob/walk_mob.gd" id="1_m1v81"]
+[ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="2_7hr68"]
+[ext_resource type="PackedScene" uid="uid://briuv4afvsms5" path="res://player/bubblegun/bubbable.tscn" id="3_bpu0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j1kq"]
+
+[node name="WalkMob" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+lock_rotation = true
+max_contacts_reported = 2
+script = ExtResource("1_m1v81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7j1kq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7hr68")
+
+[node name="Bubbable" parent="." instance=ExtResource("3_bpu0p")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
