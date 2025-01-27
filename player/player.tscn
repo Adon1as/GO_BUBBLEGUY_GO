@@ -1,19 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctu8173bndnaa"]
+[gd_scene load_steps=13 format=3 uid="uid://ctu8173bndnaa"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_bs6cq"]
 [ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="1_yklcg"]
 [ext_resource type="PackedScene" uid="uid://c0x41qs4nxj21" path="res://player/bubblegun/bubble_gun.tscn" id="3_f2s2k"]
 [ext_resource type="Script" path="res://player/timers.gd" id="4_p2arb"]
+[ext_resource type="Texture2D" uid="uid://dqdepma1jrtyl" path="res://assets/player/Sprite idle.png" id="5_pvg50"]
+[ext_resource type="Texture2D" uid="uid://cqd6ntswfy4fx" path="res://assets/player/Andar1.png" id="6_4wawn"]
+[ext_resource type="Texture2D" uid="uid://bww8l8welvbyc" path="res://assets/player/Andar2.png" id="7_5aasu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ifh"]
+atlas = ExtResource("5_pvg50")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awsto"]
+atlas = ExtResource("6_4wawn")
+region = Rect2(6, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt4w8"]
+atlas = ExtResource("7_5aasu")
+region = Rect2(6, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqfeo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ifh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awsto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt4w8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ksuj"]
+size = Vector2(43, 52)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 11
 collision_mask = 3
 script = ExtResource("1_bs6cq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3ksuj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -22,6 +57,16 @@ texture = ExtResource("1_yklcg")
 [node name="BubbleGun" parent="Sprite2D" instance=ExtResource("3_f2s2k")]
 position = Vector2(125, 0)
 scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mqfeo")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.151887
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 6)
+shape = SubResource("RectangleShape2D_3ksuj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
