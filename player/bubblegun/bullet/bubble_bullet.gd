@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node) -> void:
 	if "bubbleable" in body:
 		body.timer.start()
-		GameManeger._on_walk_mob_bubbleable(body) 
+		GameManager._on_walk_mob_bubbleable(body) 
 		
 	queue_free()

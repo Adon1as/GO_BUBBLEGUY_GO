@@ -98,7 +98,7 @@ func process_health(hp:int):
 		
 	if health_points < 1:
 		#emit_signal("die")
-		GameManeger._on_player_die()
+		GameManager._on_player_die()
 	
 func process_stamina():
 	pass

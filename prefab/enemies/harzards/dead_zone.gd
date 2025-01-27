@@ -15,6 +15,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body as Player:
-		GameManeger._on_dead_zone_player()
+		GameManager._on_dead_zone_player()
 	if body as WalkMob:
-		GameManeger._on_dead_zone_enemy()
+		GameManager._on_dead_zone_enemy()

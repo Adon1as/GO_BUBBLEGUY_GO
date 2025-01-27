@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	GameManeger._on_walk_mob_bubble_out(self)
+	GameManager._on_walk_mob_bubble_out(self)
 	#emit_signal("bubble_out", self)
 	

@@ -3,9 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameManeger.game_result == 1:
+	if GameManager.game_result == 1:
 		won() # Replace with function body.
-	elif GameManeger.game_result == -1:
+	elif GameManager.game_result == -1:
 		lose()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
