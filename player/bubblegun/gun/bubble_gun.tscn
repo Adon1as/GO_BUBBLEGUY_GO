@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0x41qs4nxj21"]
 
-[ext_resource type="Script" path="res://player/bubblegun/bubble_gun.gd" id="1_qkmad"]
+[ext_resource type="Script" path="res://player/bubblegun/gun/bubble_gun.gd" id="1_qkmad"]
 
 [node name="BubbleGun" type="Marker2D"]
 script = ExtResource("1_qkmad")

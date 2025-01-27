@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctu8173bndnaa"]
+[gd_scene load_steps=12 format=3 uid="uid://ctu8173bndnaa"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_bs6cq"]
-[ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="1_yklcg"]
-[ext_resource type="PackedScene" uid="uid://c0x41qs4nxj21" path="res://player/bubblegun/bubble_gun.tscn" id="3_f2s2k"]
+[ext_resource type="PackedScene" uid="uid://c0x41qs4nxj21" path="res://player/bubblegun/gun/bubble_gun.tscn" id="3_f2s2k"]
 [ext_resource type="Script" path="res://player/timers.gd" id="4_p2arb"]
 [ext_resource type="Texture2D" uid="uid://dqdepma1jrtyl" path="res://assets/player/Sprite idle.png" id="5_pvg50"]
 [ext_resource type="Texture2D" uid="uid://cqd6ntswfy4fx" path="res://assets/player/Andar1.png" id="6_4wawn"]
@@ -50,19 +49,14 @@ collision_layer = 11
 collision_mask = 3
 script = ExtResource("1_bs6cq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_yklcg")
-
-[node name="BubbleGun" parent="Sprite2D" instance=ExtResource("3_f2s2k")]
-position = Vector2(125, 0)
-scale = Vector2(5, 5)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mqfeo")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.151887
+
+[node name="BubbleGun" parent="AnimatedSprite2D" instance=ExtResource("3_f2s2k")]
+position = Vector2(31, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 6)
@@ -86,7 +80,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="knockback" type="Timer" parent="PlayerTimer"]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 
 [connection signal="timeout" from="PlayerTimer/dash" to="." method="_on_dash_timeout"]

@@ -1,5 +1,7 @@
-extends RigidBody2D
-class_name BubbleBullet
+extends Area2D
+
+signal enemy
+signal player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +13,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node) -> void:
-	if "bubbleable" in body:
-		body.to_bubble = true
-	queue_free()
+func _on_body_entered(body: Node2D) -> void:
+	if body as Player:
+		GameManeger._on_dead_zone_player()
+	if body as WalkMob:
+		GameManeger._on_dead_zone_enemy()

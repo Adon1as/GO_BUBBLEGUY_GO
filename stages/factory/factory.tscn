@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://bhg4lotnq4e7p"]
+[gd_scene load_steps=10 format=4 uid="uid://bhg4lotnq4e7p"]
 
 [ext_resource type="Texture2D" uid="uid://n7p45geaff5m" path="res://assets/factory/bg_factory_mono.png" id="1_4hbmp"]
-[ext_resource type="Script" path="res://stages/factory/factory.gd" id="1_j4qfx"]
 [ext_resource type="Texture2D" uid="uid://or0csaddp5rp" path="res://assets/factory/brick_factory.png" id="2_ullgp"]
 [ext_resource type="PackedScene" uid="uid://ctu8173bndnaa" path="res://player/player.tscn" id="3_exftv"]
-[ext_resource type="PackedScene" uid="uid://cup5kdr8r6ryw" path="res://prefab/enemys/walk_mob/walk_mob.tscn" id="4_l7qmi"]
-[ext_resource type="PackedScene" uid="uid://briuv4afvsms5" path="res://player/bubblegun/bubble_effect.tscn" id="6_2ud15"]
-[ext_resource type="PackedScene" uid="uid://b83j20g1a55eh" path="res://prefab/enemys/harzards/dead_zone.tscn" id="7_atgk4"]
+[ext_resource type="PackedScene" uid="uid://cup5kdr8r6ryw" path="res://prefab/enemies/walk_mob/walk_mob.tscn" id="4_l7qmi"]
+[ext_resource type="PackedScene" uid="uid://b83j20g1a55eh" path="res://prefab/enemies/harzards/dead_zone.tscn" id="7_atgk4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fobn"]
 
@@ -32,7 +30,6 @@ a = Vector2(1, -28)
 b = Vector2(1, 332)
 
 [node name="Factory" type="Node2D"]
-script = ExtResource("1_j4qfx")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-77, 4)
@@ -56,15 +53,6 @@ position = Vector2(229, 276)
 
 [node name="WalkMob" parent="." instance=ExtResource("4_l7qmi")]
 position = Vector2(408, 278)
-
-[node name="BubbleEffect" parent="." instance=ExtResource("6_2ud15")]
-position = Vector2(-27, 379)
-collision_mask = 9
-linear_velocity = Vector2(0, 100)
-angular_velocity = 0.872665
-
-[node name="DevVault" type="Marker2D" parent="."]
-position = Vector2(-27, 380)
 
 [node name="Wall" type="StaticBody2D" parent="."]
 

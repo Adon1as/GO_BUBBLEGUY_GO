@@ -13,11 +13,11 @@ func _ready() -> void:
 	timer = get_node("Timer")
 
 func _process(delta: float) -> void:
-	if to_bubble:
-		timer.start()
-		emit_signal("bubbleable", self)
+	pass
+		
 
 
 func _on_timer_timeout() -> void:
-	emit_signal("bubble_out", self)
+	GameManeger._on_walk_mob_bubble_out(self)
+	#emit_signal("bubble_out", self)
 	

@@ -1,5 +1,5 @@
 extends Node
-class_name PLayerTimer
+class_name PlayerTimer
 
 @onready var dash := $dash as Timer
 @onready var delay_dmg := $delay_dmg as Timer

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2acrrjqxysy8"]
 
 [ext_resource type="Texture2D" uid="uid://o4p375xwu6b3" path="res://assets/player/bubble_gun/bubble dawg.png" id="1_50vw8"]
-[ext_resource type="Script" path="res://player/bubblegun/bubble_bullet.gd" id="1_xl1bc"]
+[ext_resource type="Script" path="res://player/bubblegun/bullet/bubble_bullet.gd" id="1_xl1bc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4tphg"]
 radius = 13.0

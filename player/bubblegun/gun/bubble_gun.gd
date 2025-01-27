@@ -1,10 +1,10 @@
-class_name BublleGun extends Marker2D
+class_name BubbleGun extends Marker2D
 ## Represents a weapon that spawns and shoots bullets.
 ## The Cooldown timer controls the cooldown duration between shots.
 
 
 const BULLET_VELOCITY = 600.0
-const BULLET_SCENE = preload("res://player/bubblegun/bubble_bullet.tscn")
+const BULLET_SCENE = preload("res://player/bubblegun/bullet/bubble_bullet.tscn")
 
 @onready var sound_shoot := $Shoot as AudioStreamPlayer2D
 #@onready var timer := $Cooldown as Timer

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b83j20g1a55eh"]
 
-[ext_resource type="Script" path="res://prefab/enemys/harzards/dead_zone.gd" id="1_gk7mr"]
+[ext_resource type="Script" path="res://prefab/enemies/harzards/dead_zone.gd" id="1_gk7mr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aipqg"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://briuv4afvsms5"]
 
-[ext_resource type="Script" path="res://player/bubblegun/bubble_effect.gd" id="1_1jq4k"]
+[ext_resource type="Script" path="res://player/bubblegun/effect/bubble_effect.gd" id="1_1jq4k"]
 [ext_resource type="Texture2D" uid="uid://o4p375xwu6b3" path="res://assets/player/bubble_gun/bubble dawg.png" id="1_kbe6q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pgkh8"]
@@ -8,8 +8,8 @@ radius = 13.0
 
 [node name="BubbleEffect" type="RigidBody2D"]
 collision_layer = 0
+collision_mask = 9
 gravity_scale = 0.0
-freeze = true
 linear_damp = 5.0
 script = ExtResource("1_1jq4k")
 

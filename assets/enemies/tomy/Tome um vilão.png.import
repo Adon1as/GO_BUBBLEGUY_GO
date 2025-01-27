@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://652xkbssx7bk"
-path="res://.godot/imported/placeholder_aura.png-838fbc8d888fb699553b164f1dc3d1c3.ctex"
+uid="uid://dvibbqkx2fl3p"
+path="res://.godot/imported/Tome um vilão.png-537261e2a3a38f66806f36eea7effe47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/bubblegun/placeholder_aura.png"
-dest_files=["res://.godot/imported/placeholder_aura.png-838fbc8d888fb699553b164f1dc3d1c3.ctex"]
+source_file="res://assets/enemies/tomy/Tome um vilão.png"
+dest_files=["res://.godot/imported/Tome um vilão.png-537261e2a3a38f66806f36eea7effe47.ctex"]
 
 [params]
 
