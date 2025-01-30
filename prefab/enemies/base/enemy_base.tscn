@@ -1,11 +1,20 @@
-[gd_scene format=3 uid="uid://bra3ah6cnmwoy"]
+[gd_scene load_steps=2 format=3 uid="uid://bra3ah6cnmwoy"]
+
+[ext_resource type="Script" path="res://prefab/enemies/base/enemy_base.gd" id="1_err8c"]
 
 [node name="EnemyBase" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_err8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

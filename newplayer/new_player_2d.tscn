@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://skxs1pof7b8p"]
+
+[ext_resource type="Texture2D" uid="uid://bxkmxoficefmi" path="res://assets/icon.svg" id="1_54wef"]
+[ext_resource type="Script" path="res://newplayer/new_player_2d.gd" id="1_lg1i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtjgi"]
+size = Vector2(26, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01o6a"]
+size = Vector2(30, 31)
+
+[node name="NewPlayer2D" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_lg1i4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("1_54wef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_vtjgi")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_01o6a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = -68.0
+offset_right = 97.0
+offset_bottom = -37.0
+theme_override_constants/line_spacing = -7
+theme_override_font_sizes/font_size = 16
+text = "DEBG LABEL
+STATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

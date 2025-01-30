@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://c2m8xmpd8vm0x"]
 
 [ext_resource type="Texture2D" uid="uid://cmpymcpxmic8w" path="res://assets/factory/tilemap_packed.png" id="1_qs0hm"]
-[ext_resource type="PackedScene" uid="uid://ctu8173bndnaa" path="res://player/player.tscn" id="2_ab3iv"]
 [ext_resource type="PackedScene" uid="uid://b2g6y7uryjbmm" path="res://prefab/enemies/enemy_snail.tscn" id="3_dt1mh"]
+[ext_resource type="PackedScene" uid="uid://skxs1pof7b8p" path="res://newplayer/new_player_2d.tscn" id="3_owmfj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ltx1"]
 texture = ExtResource("1_qs0hm")
@@ -152,10 +152,10 @@ sources/0 = SubResource("TileSetAtlasSource_2ltx1")
 tile_map_data = PackedByteArray("AAABAP//AAACAAAAAQACAP//AAACAAAAAQADAP//AAACAAAAAQAEAP//AAACAAAAAQAFAP//AAACAAAAAQAGAP//AAACAAAAAQAHAP//AAACAAAAAQAIAP//AAACAAAAAQAJAP//AAACAAAAAQAKAP//AAACAAAAAQALAP//AAACAAAAAQAMAP//AAACAAAAAQANAP//AAACAAAAAQAOAP//AAACAAAAAQAPAP//AAACAAAAAQAQAP//AAACAAAAAQARAP//AAACAAAAAQASAP//AAACAAAAAQATAP//AAACAAAAAQAUAP//AAACAAAAAQAYAP//AAACAAAAAQAZAP//AAACAAAAAQAaAP//AAACAAAAAQAbAP//AAACAAAAAQAcAP//AAACAAAAAQAdAP//AAACAAAAAQAeAP//AAACAAAAAQAfAP//AAACAAAAAQAgAP//AAACAAAAAQAhAP//AAACAAAAAQAiAP//AAACAAAAAQAjAP//AAACAAAAAQA=")
 tile_set = SubResource("TileSet_6tg81")
 
-[node name="Player" parent="." instance=ExtResource("2_ab3iv")]
-position = Vector2(103, -59)
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="EnemySnail" parent="Enemies" instance=ExtResource("3_dt1mh")]
-position = Vector2(244, -27)
+position = Vector2(182, -28)
+
+[node name="NewPlayer2D" parent="." instance=ExtResource("3_owmfj")]
+position = Vector2(101, -40)
